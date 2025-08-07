@@ -157,7 +157,11 @@ ExecStart=/usr/local/bin/node_exporter
 [Install]
 WantedBy=multi-user.target
 ```
-
+Create user 'prometheus'
+```
+sudo useradd --system --no-create-home --shell /sbin/nologin prometheus
+sudo chown prometheus:prometheus /usr/local/bin/node_exporter
+```
 ### 2.3 Start Node Exporter
 
 ```bash
